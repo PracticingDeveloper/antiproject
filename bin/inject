@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "msgpack"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+proj[ARGV[0]] = File.binread(ARGV[1])
+
+File.binwrite("proj.dat", proj.to_msgpack)

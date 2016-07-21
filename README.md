@@ -1,3 +1,5 @@
+*So safe, so clean!*
+
 # Antiproject Rules
 
 * Don't do anything dangerous

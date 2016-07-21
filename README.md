@@ -24,3 +24,10 @@ don't break existing functionality and are entirely optional.
 $ bundle
 $ ./bin/exec hello
 ```
+
+## License
+
+This project is licensed under the CC0 1.0 Universal License
+(essentially public domain)
+
+See LICENSE.md for details.

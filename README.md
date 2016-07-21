@@ -14,6 +14,7 @@ unless they are hilarious.
 or included in a commit message.
 * Dependencies on third party systems and services are fine, so long as they
 don't break existing functionality and are entirely optional.
+* Need help? Ask in #antiproject
 
 **Patches accepted from members of The Workshop only for now**
 

@@ -1,4 +1,4 @@
-ƒ¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄOrequire "msgpack"
+‡¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄOrequire "msgpack"
 require "pp"
 
 pp MessagePack.unpack(File.binread("proj.dat"))¤meta¤lang¤ruby£fun‚¤bodyÄyrequire "launchy"
@@ -8,4 +8,27 @@ sleep 3
 Launchy.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 puts "You've been Rick Rolled!"
-¤meta¤lang¤ruby
+¤meta¤lang¤ruby¤push‚¤bodyÄ¤require "msgpack"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+proj["queue"] ||= []
+proj["queue"].push(ARGV[1])
+
+File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¥greet‚¤bodyÄ©require "msgpack"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+begin
+  puts "HELLO #{proj["queue"].pop}"
+ensure
+  File.binwrite("proj.dat", proj.to_msgpack)
+end¤meta¤lang¤rubyÄqueue¤drop‚¤bodyÄ#!/usr/bin/env ruby
+
+require "msgpack"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+proj.delete(ARGV[1])
+
+File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby

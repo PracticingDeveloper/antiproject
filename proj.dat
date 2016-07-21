@@ -1,4 +1,4 @@
-‰¥hello‚¤bodyÄ…#!/usr/bin/env ruby
+Š¥hello‚¤bodyÄ…#!/usr/bin/env ruby
 
 require "msgpack"
 require "json"
@@ -56,4 +56,24 @@ proj = MessagePack.unpack(File.binread("proj.dat"))
 
 puts proj.keys.sort
 
-File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby
+File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¤repl‚¤bodyÅ=#!/usr/bin/env ruby
+
+require "msgpack"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+if $DEBUG
+  puts "Running #{ARGV[0]} with metadata:" 
+  puts proj[ARGV[0]]["meta"].inspect
+  puts
+end
+
+
+loop do
+  puts
+  print "> "
+  command = STDIN.gets.chomp
+  break if command == "exit"
+  eval(proj[command]["body"])
+end
+¤meta¤lang¤ruby

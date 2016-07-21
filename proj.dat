@@ -1,1 +1,5 @@
-¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby
+‚¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄPrequire "msgpack"
+require "pp"
+
+pp MessagePack.unpack(File.binread("proj.dat"))
+¤meta¤lang¤ruby

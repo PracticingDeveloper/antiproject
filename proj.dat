@@ -1,4 +1,7 @@
-‚¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄyrequire "launchy"
+ƒ¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄOrequire "msgpack"
+require "pp"
+
+pp MessagePack.unpack(File.binread("proj.dat"))¤meta¤lang¤ruby£fun‚¤bodyÄyrequire "launchy"
 
 sleep 3
 

@@ -1,4 +1,4 @@
-Š¥hello‚¤bodyÄ…#!/usr/bin/env ruby
+¥hello‚¤bodyÄ…#!/usr/bin/env ruby
 
 require "msgpack"
 require "json"
@@ -15,14 +15,7 @@ sleep 3
 Launchy.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 puts "You've been Rick Rolled!"
-¤meta¤lang¤ruby¤push‚¤bodyÄ¤require "msgpack"
-
-proj = MessagePack.unpack(File.binread("proj.dat"))
-
-proj["queue"] ||= []
-proj["queue"].push(ARGV[1])
-
-File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¥greet‚¤bodyÄ©require "msgpack"
+¤meta¤lang¤ruby¥greet‚¤bodyÄ©require "msgpack"
 
 proj = MessagePack.unpack(File.binread("proj.dat"))
 
@@ -56,7 +49,7 @@ proj = MessagePack.unpack(File.binread("proj.dat"))
 
 puts proj.keys.sort
 
-File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¤repl‚¤bodyÅ=#!/usr/bin/env ruby
+File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¤repl‚¤bodyÅŒ#!/usr/bin/env ruby
 
 require "msgpack"
 
@@ -72,8 +65,72 @@ end
 loop do
   puts
   print "> "
-  command = STDIN.gets.chomp
-  break if command == "exit"
-  eval(proj[command]["body"])
+
+  args = STDIN.gets.chomp.split(" ")
+
+  break if args[0] == "exit"
+
+  proj["args"] = args
+  File.binwrite("proj.dat", proj.to_msgpack)
+
+  eval(proj[args[0]]["body"])
 end
-¤meta¤lang¤ruby
+¤meta¤lang¤ruby¤args¤copy‚¤bodyÄ²require "msgpack"
+require "json"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+proj[ proj["args"][2] ] = proj[proj["args"][1]]
+
+File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¥merge‚¤bodyÄÎrequire "msgpack"
+require "json"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+back = MessagePack.unpack(File.binread(proj["args"][1]))
+
+proj.update(back)
+
+File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¤push‚¤bodyÄ¤require "msgpack"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+proj["queue"] ||= []
+proj["queue"].push(ARGV[1])
+
+File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¦inject‚ÄbodyÅU#!/usr/bin/env ruby
+
+require "msgpack"
+require "json"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+if ARGV[3].nil?
+  proj[ARGV[1]] = { "body" => File.binread(ARGV[2]), "meta" => {} }
+else
+  proj[ARGV[1]] = { "body" => File.binread(ARGV[2]), "meta" => JSON.parse(File.read(ARGV[3])) }
+end
+
+File.binwrite("proj.dat", proj.to_msgpack)
+Ämeta¤lang¤ruby¤eval‚ÄbodyÅt#!/usr/bin/env ruby
+
+require "msgpack"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+proj["args"] = ARGV
+
+File.binwrite("proj.dat", proj.to_msgpack)
+
+if $DEBUG
+  puts "Running #{ARGV[0]} with metadata:" 
+  puts proj[ARGV[0]]["meta"].inspect
+  puts
+end
+
+begin
+  eval(proj[ARGV[0]]["body"])
+ensure
+  proj["args"] = []
+
+  File.binwrite("proj.dat", proj.to_msgpack)
+endÄmeta¤lang¤ruby

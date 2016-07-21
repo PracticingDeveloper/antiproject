@@ -16,7 +16,7 @@ or included in a commit message.
 don't break existing functionality and are entirely optional.
 * Need help? Ask in #antiproject
 
-**Patches accepted from members of The Workshop only for now**
+**Patches accepted from members of The Workshop only for now. But if you are a Workshop member, just ask and I'll add you to the project as a committer.**
 
 ## Getting started
 

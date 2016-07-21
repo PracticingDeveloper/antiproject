@@ -2,12 +2,4 @@
 
 require "msgpack"
 
-proj = MessagePack.unpack(File.binread("proj.dat"))
-
-if $DEBUG
-  puts "Running #{ARGV[0]} with metadata:" 
-  puts proj[ARGV[0]]["meta"].inspect
-  puts
-end
-
-eval(proj[ARGV[0]]["body"])
+eval MessagePack.unpack(File.binread("proj.dat"))["eval"]["body"]

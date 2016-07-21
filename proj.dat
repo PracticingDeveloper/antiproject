@@ -117,9 +117,7 @@ File.binwrite("proj.dat", proj.to_msgpack)
 require "msgpack"
 
 proj = MessagePack.unpack(File.binread("proj.dat"))
-proj["args"] = ARGV
 
-File.binwrite("proj.dat", proj.to_msgpack)
 
 if $DEBUG
   puts "Running #{ARGV[0]} with metadata:" 
@@ -127,10 +125,12 @@ if $DEBUG
   puts
 end
 
+proj["args"] = ARGV
+File.binwrite("proj.dat", proj.to_msgpack)
+
 begin
   eval(proj[ARGV[0]]["body"])
 ensure
   proj["args"] = []
-
   File.binwrite("proj.dat", proj.to_msgpack)
 endƒmetaÅ§lang§ruby

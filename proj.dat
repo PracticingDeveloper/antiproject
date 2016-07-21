@@ -1,4 +1,11 @@
-‰¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄOrequire "msgpack"
+‰¥hello‚¤bodyÄ…#!/usr/bin/env ruby
+
+require "msgpack"
+require "json"
+
+puts
+puts "Welcome! Try running ./bin/exec index for a list of commands."
+puts¤meta¤lang¤ruby§inspect‚¤bodyÄOrequire "msgpack"
 require "pp"
 
 pp MessagePack.unpack(File.binread("proj.dat"))¤meta¤lang¤ruby£fun‚¤bodyÄyrequire "launchy"

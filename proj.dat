@@ -1,5 +1,8 @@
-‚¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄPrequire "msgpack"
-require "pp"
+‚¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄyrequire "launchy"
 
-pp MessagePack.unpack(File.binread("proj.dat"))
+sleep 3
+
+Launchy.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+puts "You've been Rick Rolled!"
 ¤meta¤lang¤ruby

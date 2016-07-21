@@ -2,9 +2,9 @@
 
 * Don't do anything dangerous
 * Don't do anything mean
-* Always use `bin/inject` to add features, don't check in source.
 * Always use `bin/exec` to run features.
-* You may modify both `bin/inject` and `bin/exec`, but if you break old behavior,
+* Always use `inject` command to add features, don't check in source.
+* You may modify `bin/exec`, but if you break old behavior,
 your changes will be reverted.
 * Project is not limited to Ruby. But don't break ability to use RUby.
 * Rewriting someone else's commands is OK. But don't be surprised if they

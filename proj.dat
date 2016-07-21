@@ -1,4 +1,4 @@
-‰¥hello‚¤bodyÄ…#!/usr/bin/env ruby
+Š¥hello‚¤bodyÄ…#!/usr/bin/env ruby
 
 require "msgpack"
 require "json"
@@ -56,4 +56,18 @@ proj = MessagePack.unpack(File.binread("proj.dat"))
 
 puts proj.keys.sort
 
-File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby
+File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¦inject‚ÄbodyÅU#!/usr/bin/env ruby
+
+require "msgpack"
+require "json"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+if ARGV[3].nil?
+  proj[ARGV[1]] = { "body" => File.binread(ARGV[2]), "meta" => {} }
+else
+  proj[ARGV[1]] = { "body" => File.binread(ARGV[2]), "meta" => JSON.parse(File.read(ARGV[3])) }
+end
+
+File.binwrite("proj.dat", proj.to_msgpack)
+Ämeta¤lang¤ruby

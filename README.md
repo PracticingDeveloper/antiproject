@@ -5,6 +5,7 @@
 * Assume `proj.dat` can be corrupted at any time, keep backups
 * Always use `bin/exec` to run features.
 * Always use `inject` command to add features, don't check in source.
+* Use the `merge` command to resolve store conflicts
 * You may modify `bin/exec`, but if you break old behavior,
 your changes will be reverted.
 * Project is not limited to Ruby. But don't break ability to use RUby.

@@ -1,4 +1,4 @@
-‡¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄOrequire "msgpack"
+ˆ¥hello‚¤bodyÄ(puts "Rewrite me with something fancier"¤meta¤lang¤ruby§inspect‚¤bodyÄOrequire "msgpack"
 require "pp"
 
 pp MessagePack.unpack(File.binread("proj.dat"))¤meta¤lang¤ruby£fun‚¤bodyÄyrequire "launchy"
@@ -30,5 +30,14 @@ require "msgpack"
 proj = MessagePack.unpack(File.binread("proj.dat"))
 
 proj.delete(ARGV[1])
+
+File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby¤show‚¤bodyÄ²#!/usr/bin/env ruby
+
+require "msgpack"
+require "json"
+
+proj = MessagePack.unpack(File.binread("proj.dat"))
+
+puts proj[ARGV[1]]["body"]
 
 File.binwrite("proj.dat", proj.to_msgpack)¤meta¤lang¤ruby

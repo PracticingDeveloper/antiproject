@@ -2,6 +2,7 @@
 
 * Don't do anything dangerous
 * Don't do anything mean
+* Assume `proj.dat` can be corrupted at any time, keep backups
 * Always use `bin/exec` to run features.
 * Always use `inject` command to add features, don't check in source.
 * You may modify `bin/exec`, but if you break old behavior,

@@ -1,6 +1,49 @@
 *So safe, so clean!*
 
-# Antiproject Rules
+
+# Design Guidelines
+
+We strictly follow and enforce the most glorious design patterns of Foote and Yoder.
+
+(from http://www.laputan.org/mud/mud.html#BigBallOfMud)
+
+*BIG BALL OF MUD*
+
+- You need to deliver quality software on time, and under budget.
+- *Therefore*, focus first on features and functionality, then focus on architecture and performance.
+
+*THROWAWAY CODE*
+
+- You need an immediate fix for a small problem, or a quick prototype or proof of concept.
+- *Therefore*, produce, by any means available, simple, expedient, disposable code that adequately addresses just the problem at-hand.
+
+*PIECEMEAL GROWTH*
+
+- Master plans are often rigid, misguided and out of date. Users’ needs change with time.
+- *Therefore*, incrementally address forces that encourage change and growth. Allow opportunities for growth to be exploited locally, as they occur. Refactor unrelentingly.
+
+*KEEP IT WORKING*
+
+- Maintenance needs have accumulated, but an overhaul is unwise, since you might break the system.
+- *Therefore*, do what it takes to maintain the software and keep it going. Keep it working.
+
+*SHEARING LAYERS*
+
+- Different artifacts change at different rates.
+- *Therefore*, factor your system so that artifacts that change at similar rates are together.
+
+*SWEEPING IT UNDER THE RUG*
+
+- Overgrown, tangled, haphazard spaghetti code is hard to comprehend, repair, or extend, and tends to grow even worse if it is not somehow brought under control.
+
+- *Therefore*, if you can’t easily make a mess go away, at least cordon it off. This restricts the disorder to a fixed area, keeps it out of sight, and can set the stage for additional refactoring
+
+*RECONSTRUCTION*
+
+- Your code has declined to the point where it is beyond repair, or even comprehension.
+- *Therefore*, throw it away and start over.
+
+# Collaboration Rules
 
 * Don't do anything dangerous
 * Don't do anything mean

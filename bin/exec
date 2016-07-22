@@ -2,4 +2,10 @@
 
 require "msgpack"
 
-eval MessagePack.unpack(File.binread("proj.dat"))["eval"]["body"]
+project_path = ARGV.shift
+
+if project_path.nil?
+  puts "no project file specified"
+else
+  eval(MessagePack.unpack(File.binread(project_path))[".entry"]["body"]).call(project_path)
+end

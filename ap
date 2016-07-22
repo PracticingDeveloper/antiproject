@@ -1,1 +1,5 @@
-bin/exec
+#!/usr/bin/env ruby
+
+ARGV.unshift "proj.dat"
+
+load "bin/exec"

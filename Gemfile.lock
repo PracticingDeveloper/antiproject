@@ -5,6 +5,14 @@ GEM
     launchy (2.4.3)
       addressable (~> 2.3)
     msgpack (1.0.0)
+    rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    tilt (2.0.5)
 
 PLATFORMS
   ruby
@@ -12,6 +20,7 @@ PLATFORMS
 DEPENDENCIES
   launchy
   msgpack
+  sinatra
 
 BUNDLED WITH
-   1.11.2
+   1.12.5

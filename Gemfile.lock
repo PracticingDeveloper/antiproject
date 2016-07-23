@@ -2,16 +2,25 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.4.0)
+    concurrent-ruby (1.0.2)
+    hamster (3.0.0)
+      concurrent-ruby (~> 1.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    link_header (0.0.8)
     msgpack (1.0.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    rdf (2.0.2)
+      hamster (~> 3.0)
+      link_header (~> 0.0, >= 0.0.8)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    sxp (1.0.0)
+      rdf (~> 2.0)
     tilt (2.0.5)
 
 PLATFORMS
@@ -21,6 +30,7 @@ DEPENDENCIES
   launchy
   msgpack
   sinatra
+  sxp
 
 BUNDLED WITH
    1.12.5

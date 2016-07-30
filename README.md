@@ -1,4 +1,4 @@
-*So safe, so clean!*
+*Little surprises around every corner, but nothing dangerous!*
 
 
 # Design Guidelines

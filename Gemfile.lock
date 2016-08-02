@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.4.0)
+    chunky_png (1.3.6)
     concurrent-ruby (1.0.2)
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
@@ -22,6 +23,8 @@ GEM
     sxp (1.0.0)
       rdf (~> 2.0)
     tilt (2.0.5)
+    tortoise (0.9.8.1)
+      chunky_png
 
 PLATFORMS
   ruby
@@ -31,6 +34,7 @@ DEPENDENCIES
   msgpack
   sinatra
   sxp
+  tortoise
 
 BUNDLED WITH
    1.12.5
